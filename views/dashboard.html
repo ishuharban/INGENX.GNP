@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./Style/dashboard.css">
+</head>
+<style>
+  .card-title {
+    color: #db0075;
+  }
+
+  .card-text {
+    color: #17E6E6;
+  }
+
+  .list-inline-item {
+    color: #ffd700
+  }
+
+  .price {
+    color: #9B1B30;
+  }
+
+  .btn-pink {
+    background-color: #fcb2b2 !important;
+  }
+</style>
+
+<body>
+
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px" height="70px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="home" aria-current="page" href="./dashboard.html"><b>HOME</b></a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>DEAL</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealDetails.html"><b>STATUS</b></a></li>
+              <li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>COMMISSION PAYOUT</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./tnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <!-- <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE UPLOAD & GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li> -->
+              <li><a class="dropdown-item" href="./performanceGraph.html"><b>PERFORMANCE GRAPH</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown profile">
+            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+              <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form method="get" action="/profile">
+                <div id="profile"></div>
+              </form>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./personaldetails.html"><b>PRESONAL INFO</b></a></li>
+              <li>
+
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./settings.html"><b>SETTINGS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr />
+        <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+            id="ingenxlogo"></a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+ <!-- DASHBOARD -->
+
+
+
+ <div class="header ">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row">
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase  mb-0 fw-bold">TOTAL DEAL</h5>
+                  <span class="h2 fw-bold mb-0" id="count">0</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                    <i class="fas fa-chart-bar"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <!-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i></span> -->
+                <!-- <span class="text-nowrap">Since Last Month</span> -->
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase fw-bold mb-0">ONGOING DEALS</h5>
+                  <span class="h2 fw-bold mb-0" id="ongoing">0</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                    <i class="fas fa-chart-pie"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <!-- <span class="text-primary mr-2"><i class="fas fa-arrow-up"></i></span> -->
+                <!-- <span class="text-nowrap">Since Last Month</span> -->
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase fw-bold mb-0">CLOSED DEALS</h5>
+                  <span class="h2 fw-bold mb-0" id="closeddeal">0</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-yellow text-dark rounded-circle shadow">
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <!-- <span class="text-warning mr-2"><i class="fas fa-arrow-up"></i></span> -->
+                <!-- <span class="text-nowrap">Since Last Year</span> -->
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase fw-bold mb-0">Performance</h5>
+                  <span class="h2 fw-bold mb-0 mt-4 " id="performanceRatio">0%</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                    <i class="fas fa-percent"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <!-- <span class="text-secondary mr-2"><i class="fas fa-arrow-up"></i></span> -->
+                <!-- <span class="text-nowrap">Since Last Month</span> -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xl-2">
+  <div class="card shadow" style="border: 2px solid gray; border-radius: 5px;">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Filter Deals</h5>
+      <div id="dealFilter" style="max-height: 250px; overflow-y: auto;"></div>
+    </div>
+  </div>
+</div>
+<script>
+   let barChart;
+  let pieChart;
+
+  fetch('/dealsDetails')
+    .then(response => response.json())
+    .then(data => {
+
+      createBarChart(data);
+      createPieChart(data);
+
+      const dealFilter = document.getElementById('dealFilter');
+      data.forEach((item) => {
+        const checkbox = document.createElement('div');
+        checkbox.innerHTML = `
+          <div class="form-check">
+            <input class="form-check-input deal-checkbox" type="checkbox" value="${item.dealname}" id="${item.dealname}">
+            <label class="form-check-label" for="${item.dealname}">${item.dealname}</label>
+          </div>`;
+
+        checkbox.querySelector('input').addEventListener('change', updateCharts);
+        dealFilter.appendChild(checkbox);
+      });
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  function updateCharts() {
+    const selectedDealNames = Array.from(document.querySelectorAll('.deal-checkbox:checked')).map(checkbox => checkbox.value);
+    fetch('/dealsDetails')
+      .then(response => response.json())
+      .then(data => {
+        let filteredData;
+    if (selectedDealNames.length === 0) {
+      filteredData = data;
+    } else {
+ 
+      filteredData = data.filter(item => selectedDealNames.includes(item.dealname));
+    }
+    barChart.destroy();
+    pieChart.destroy();
+    createBarChart(filteredData);
+    createPieChart(filteredData);
+    
+  })
+  .catch(error => {
+    console.error(error);
+  });
+  }
+
+</script>
+
+<section class="container-fluid pt-3 mb-3">
+  <form action="/dashboard" enctype="multipart/form-data">
+    <div class="container-fluid mt-7">
+      <div class="row">
+        <div class="col-md-8 mb-5 mt-2">
+          <div class="card bg-gradient-default shadow" style="border: 2px solid gray; border-radius: 5px;">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">ALL DEALS</h6>
+                  <h2 class="mb-0">Ongoing Deals</h2>
+                </div>
+              </div>
+            </div>
+            <canvas id="myChart"width="350" height="118"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+               function createBarChart(data) {
+                  const ctx = document.getElementById('myChart');
+                  const labels = data.map(item => item.dealname);
+                  const dataValues = data.map(item => item.Stage);
+                  barChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: labels,
+                      datasets: [{
+                        label: '% Complete',
+                        data: dataValues,
+                         backgroundColor: ['red', 'aqua', 'pink', 'lightgreen', 'lightblue', 'green'],
+                        borderColor: [
+                          'rgba(255, 99, 132, 1)',
+                          'rgba(54, 162, 235, 1)',
+                          'rgba(255, 206, 86, 1)',
+                          'rgba(75, 192, 192, 1)',
+                          'rgba(153, 102, 255, 1)',
+                          'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                }
+            </script>
+          </div>
+        </div>
+        <div class="col-md-4 mt-2">
+          <div class="card shadow" style="border: 2px solid gray; border-radius: 5px;">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text ls-1 mb-1">Overview</h6>
+                  <h2 class="text mb-1">Deals Value</h2>
+                </div>
+              </div>
+            </div>
+            <div>
+              <!-- <label for="dealname">Select a Deal Name:</label> -->
+            </div>
+            <div>
+              <canvas id="pieChart" width="350" height="401"></canvas>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+              function createPieChart(data) {
+                    const ctx = document.getElementById("pieChart").getContext("2d");
+                    const labels = data.map(deal => deal.dealname);
+                    const estimatecost = data.map(deal => deal.estimatecost);
+                    pieChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                      labels: data.map(deal => deal.dealname),
+                      datasets: [{
+                        data: data.map(deal => deal.estimatecost),
+                        backgroundColor: ['red', 'aqua', 'pink', 'lightgreen', 'lightblue', 'green'],
+                        borderColor: [
+                          'rgba(255, 99, 132, 1)',
+                          'rgba(54, 162, 235, 1)',
+                          'rgba(255, 206, 86, 1)',
+                          'rgba(75, 192, 192, 1)',
+                          'rgba(153, 102, 255, 1)',
+                          'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-xl-6 mb-5 mb-xl-0">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <div class="row align-items-center">
+             <div class="col">
+               <h3 class="mb-0 card-title fw-bold text-uppercase">New & Ongoing Deals</h3>
+             </div>
+              <div class="col-lg-2 text-right">
+                <a href="./dealApproval.html" class="btn btn-sm btn-primary">See all</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+
+            <!-- Deal table -->
+
+            <form method="get" action="/dealapproval">
+              <table class="table align-items-center  table-striped">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Deal Name</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Date Created</th>
+                  </tr>
+                </thead>
+                <tbody id="table"></tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="mb-0 card-title fw-bold text-uppercase">Closed Deals</h3>
+              </div>
+              <div class="col-lg-2 text-right">
+                <a href="./dealApproval.html" class="btn btn-sm btn-primary">See all</a>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <!-- CLosed Deals table -->
+            <table class="table align-items-center table-striped">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Deal Name</th>
+                  <th scope="col">Date Refreshed</th>
+                  <th scope="col">Date Created</th>
+                </tr>
+              </thead>
+              <tbody id="closeddeals"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+<hr />
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="mb-0"><b>&copy; 2023-2024 INGENX TECHNOLOGY | ALL RIGHTS RESERVED</b></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://kit.fontawesome.com/f19d295e17.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+ crossorigin="anonymous"></script>
+<script src="./js/dashboard.js"></script>
+<script src="./js/common.js"></script>
+<script>
+  // Function to fetch data from the API
+  function fetchData() {
+    fetch('/dealsDetails').then(response => response.json()).then(data => {
+      const count = document.getElementById("count");
+      const Ongoingdeal = document.getElementById("ongoing")
+      const closeddeal = document.getElementById("closeddeal");
+      const container = document.getElementById('table');
+      const dealcount = data.length;
+      count.innerHTML = dealcount;
+      const closedDeals = [];
+      const OngoingDeals = [];
+      data.forEach((item, i) => {
+        const dealstatus = item.Status
+        if (dealstatus == "Closed") {
+          closedDeals.push(dealstatus)
+        }
+        if (dealstatus == "Approved") {
+          OngoingDeals.push(dealstatus)
+        }
+      })
+      closeddeal.innerText = closedDeals.length;
+      Ongoingdeal.innerText = OngoingDeals.length;
+      const performanceRatio = (closedDeals.length / dealcount) * 100; // Multiply by 100 to get a percentage
+      // Display the performance ratio in the HTML element
+      document.getElementById("performanceRatio").textContent = performanceRatio.toFixed(2) + "%";
+    });
+    fetch('/dealsDetails')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        const container = document.getElementById('table');
+        // Iterate through the data and create card elements
+        data.forEach((item, i) => {
+          const dealstatus = item.Status
+          if (dealstatus == "Approved") {
+            const dealDetails = document.createElement('tr');
+            // Set content using item properties
+            dealDetails.innerHTML = `
+    <tr>
+      <th scope="row">
+        ${item.dealname}
+      </th>
+      <td>
+        ${item.productname}
+      </td>
+      <td>
+        ${item.createdAt}
+      </td>
+    </tr> `;
+            // Append the loginDetails element to the container
+            container.append(dealDetails);
+          }
+        });
+      }
+      )
+      .catch(error => {
+        console.log('Error:', error);
+      });
+    fetch('/dealsDetails')
+      .then(response => response.json())
+      .then(data => {
+        // Iterate through the data and create card elements
+        const container = document.getElementById('closeddeals');
+        data.forEach((item, i) => {
+          const dealstatus = item.Status
+          if (dealstatus === "Closed") {
+            const closedDeals = document.createElement('tr');
+            // Set content using item properties
+            closedDeals.innerHTML = `
+                <tr>
+                  <th scope="row">
+                    ${item.dealname}
+                  </th>
+                  <td>
+                    ${item.updatedAt}
+                  </td>
+                  <td>
+                    ${item.createdAt}
+                  </td>
+                </tr>`;
+            // Append the loginDetails element to the container
+            container.append(closedDeals);
+          }
+        });
+      })
+      .catch(error => {
+        console.log('Error:', error);
+      });
+  }
+  // Call the fetchData function when the page loads
+  window.onload = fetchData;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

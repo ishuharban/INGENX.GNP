@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Style/navbar.css">
+</head>
+
+<body>
+   <main>
+        <!-- NAVBAR -->
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="100px" height="70px">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home" aria-current="page" href="./login.html"><b>HOME</b></a>
+                        </li>
+                        <li class="nav-item dropdown profile">
+                            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown"
+                                aria-expanded="false" disabled>
+                                <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <form method="get" action="/profile">
+                                    <div id="profile"></div>
+                                    </form>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./settings.html"><b>SETTINGS</b></a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr/>
+                    <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px"
+                            height="40px" id="ingenxlogo"></a>
+                </div>
+            </div>
+        </nav>
+   </main>
+    <script src="https://kit.fontawesome.com/f19d295e17.js" crossorigin="anonymous"></script>
+    <script>
+        // Function to fetch data from the API
+        function fetchData() {
+          fetch('/profile')
+            .then(response => response.json())
+            .then(data => {
+              // Iterate through the data and create card elements
+              const container = document.getElementById('profile');
+              data.forEach((item, i) => {
+
+                const loginDetails = document.createElement('div');
+
+                // Set content using item properties
+                loginDetails.innerHTML = `
+                  <div class="d-flex align-items-center">
+                      <img src="./img/ocean-3605547__340.jpg" alt="Profile Image" class="rounded-circle"
+                          style="width: 40px; height: 40px;">
+                      <div class="ms-2">
+                          <h6 class="mb-0">${item.name}</h6>
+                          <p class="small text-muted mb-0">${item.userType}</p>
+                      </div>
+                  </div>                            
+                `;
+
+                // Append the loginDetails element to the container
+                container.appendChild(loginDetails);
+              });
+            })
+            .catch(error => {
+              console.log('Error:', error);
+            });
+        }
+
+        // Call the fetchData function when the page loads
+        window.onload = fetchData;
+      </script>
+</body>
+
+</html>

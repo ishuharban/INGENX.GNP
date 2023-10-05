@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./Style/detail.css">
+  <script src ="./js/common.js"></script>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px" height="70px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="home" aria-current="page" href="./dashboard.html"><b>HOME</b></a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>DEAL</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealStatus.html"><b>STATUS</b></a></li>
+              <li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>COMMISSION PAYOUT</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./tnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <!-- <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE UPLOAD & GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li> -->
+              <li><a class="dropdown-item" href="./performanceGraph.html"><b>PERFORMANCE GRAPH</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown profile">
+            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+              <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form method="get" action="/profile">
+                <div id="profile"></div>
+              </form>
+              <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./settings.html"><b>SETTINGS</b></a></li>
+                                <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr />
+        <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+            id="ingenxlogo"></a>
+      </div>
+    </div>
+  </nav>
+
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>PARTNER DETAILS</h1>
+      </div>
+      <div class="col-lg-6">
+        <div class=" navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle m-2" href="#" id="filterDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="true" disabled>
+                Filter <i class="bi bi-filter"></i>
+              </button>
+              <ul class="dropdown-menu filter w-25" aria-labelledby="filterDropdown">
+                <li><button id="list-view" class="btn btn-primary w-75 m-2">List View</button></li>
+                <li><button id="table-view" class="btn btn-primary w-75 m-2">Table View</button></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="data-view">
+      <!-- Data will be dynamically added here -->
+    </div>
+  </div>
+  
+  <script>
+    const listViewButton = document.getElementById('list-view');
+    const tableViewButton = document.getElementById('table-view');
+    const dataView = document.querySelector('.data-view');
+
+    listViewButton.addEventListener('click', () => {
+      dataView.innerHTML = '<ul class="list-view"><li>Data item 1</li><li>Data item 2</li><li>Data item 3</li></ul>';
+    });
+
+    tableViewButton.addEventListener('click', () => {
+      dataView.innerHTML = `
+        <table class="table-view">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+              <th>Column 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data 1</td>
+              <td>Data 2</td>
+              <td>Data 3</td>
+            </tr>
+            <tr>
+              <td>Data 4</td>
+              <td>Data 5</td>
+              <td>Data 6</td>
+            </tr>
+            <tr>
+              <td>Data 7</td>
+              <td>Data 8</td>
+              <td>Data 9</td>
+            </tr>
+          </tbody>
+        </table>
+      `;
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

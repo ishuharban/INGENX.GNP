@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deal Life Cycle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./Style/dlc.css">
+  <script src="./js/common.js"></script>
+</head>
+
+<body>
+
+
+ 
+  <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px" height="70px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="home" aria-current="page" href="./dashboard.html"><b>HOME</b></a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>DEAL</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealDetails.html"><b>STATUS</b></a></li>
+              <li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>COMMISSION PAYOUT</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./tnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <!-- <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE UPLOAD & GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li> -->
+              <li><a class="dropdown-item" href="./performanceGraph.html"><b>PERFORMANCE GRAPH</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown profile">
+            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+              <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form method="get" action="/profile">
+                <div id="profile"></div>
+              </form>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./personaldetails.html"><b>PRESONAL INFO</b></a></li>
+              <li>
+
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./settings.html"><b>SETTINGS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr />
+        <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+            id="ingenxlogo"></a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- DLC -->
+
+  <section class="vh-100">
+    <h1 id="pageHeader" class="display">DEAL LIFE CYCLE</h1>
+    <div class="col-lg-12">
+      <br />
+      <div class="progress w-75 m-5 m-4">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+          aria-valuemax="100">25%</div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <div class="container" id="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div id="details"></div>
+        </div>
+        <div class="col-lg-6 comment">
+          <h3>COMMENTS</h3>
+          <div>
+            <form method="post" action="/comment" class="comments">
+              <div class="form-group mt-5 m-2">
+                <input type="text" class="form-control" id="name" name="comment" placeholder="ENTER YOUR NAME">
+              </div>
+              <div class="form-group m-2">
+                <textarea class="form-control" id="comment" rows="2" placeholder="ENTER YOUR COMMENT"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary m-4">Submit</button>
+            </form>
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/38.1.1/ckeditor.min.js" integrity="sha512-DJLYUIXCp/uDjPYcUIklqq2ZC7Sr0HzWRsel6NigUNsY5Uox+f8WVnv1BJGzlad/x9xTrl2UUyDqA/MGoFqd0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                            <script>CKEDITOR.replace('comment',{Plugin:'wysiwygarea,toolbar'})</script> -->
+          </div>
+          <div class="container">
+            <!-- Previous Comments Section -->
+            <div class="mt-5">
+              <h2>Previous Comments</h2>
+              <div class="card precomment m-2">
+                <div class="card-body">
+                  <h5 class="card-title">NONE</h5>
+                  <p class="card-text"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comment Box -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="mb-0"><b>&copy; 2023-2024 INGENX TECHNOLOGY | ALL RIGHTS RESERVED</b></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script>
+    function fetchData() {
+      fetch('/dealsDetails') // Replace with the appropriate endpoint to fetch the data from your server
+        .then(response => response.json())
+        .then(data => {
+          // Iterate through the data and create card elements
+          const container = document.getElementById('container');
+          const row = document.getElementById('details');
+          const dataArray = Object.values(data)
+          dataArray.forEach((item, i) => {
+
+            const comDetails = document.createElement('div');
+
+            // Set card content using item properties
+            comDetails.innerHTML = `
+                                <fieldset>
+                                    <div class="account-details py-4">
+                                        <div class="content">
+                                            <p>Deal ID: ${item[i].id}</p>
+                                        </div>
+                                        <div class="content">
+                                            <p>Deal Name: ${item[i].dealname}</p>
+                                            
+                                        </div>
+                                        <div class="content">
+                                            <p>Customer Name: ${item[i].customername}</p>
+                                            
+                                        </div>
+                                        <div class="content">
+                                            <p>Type of Industry: ${item[i].toi}</p>
+                                        </div>
+                                        <div class="content">
+                                             <p>Product Name: ${item[i].productname}</p>
+                                        </div>
+                                        <div class="content">
+                                            <p>Opportunity Type: ${item[i].oppType}</p>
+                                        </div>
+                                        <div class="content">
+                                            <p>Current ERP: ${item[i].currenterp}</p>
+                                        </div>
+                                        <div class="content">
+                                            <p>Sales Stage: ${item[i].Stage}</p>
+                                        </div>
+                                        <div class="content">
+                                            <p>Number of User: ${item[i].nou}</p>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            `;
+
+            row.appendChild(comDetails);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
+    // Call the fetchData function when the page loads
+    window.onload = fetchData;
+  </script>
+
+</body>
+
+</html>

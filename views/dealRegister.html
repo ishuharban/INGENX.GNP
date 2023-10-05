@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Style/dealRegister.css">
+    <script src="./js/dealRegister.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px"
+                height="70px">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home" aria-current="page" href="./dashboard.html"><b>HOME</b></a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" disabled>
+                            <b>DEAL</b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="./dealDetails.html"><b>STATUS</b></a></li>
+                            <li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" disabled>
+                            <b>COMMISSION PAYOUT</b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./tnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <!-- <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE UPLOAD & GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li> -->
+                            <li><a class="dropdown-item" href="./performanceGraph.html"><b>PERFORMANCE GRAPH</b></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown profile">
+                        <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                            disabled>
+                            <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <form method="get" action="/profile">
+                                <div id="profile"></div>
+                            </form>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="./personaldetails.html"><b>PRESONAL INFO</b></a></li>
+                            <li>
+
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="./settings.html"><b>SETTINGS</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr />
+                <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px"
+                        height="40px" id="ingenxlogo"></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- DEAL REGISTER -->
+    <!-- <div id="container" class="container"></div> -->
+
+    <form method="post" action="/dealRegister">
+
+        <h2 id="pageHeader">DEAL REGISTRATION</h2>
+        <div class="container form h-100 w-75 neeraj" >
+            <div class="row align-items-center g-0 w-75">
+                <div class="col-lg-12">
+
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row align-items-center pt-4 pb-3" style="display: none;">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="id"> ID :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <input type="text" name="id" id="id" class="form-control form-control-lg"
+                                        disabled />
+                                </div>
+                            </div>
+                            <!-- <div class="row align-items-center pt-4 pb-3" style="display: none;">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="status"> STATUS :</h6>
+
+                                </div> -->
+                            <!-- <div class="col-md-7 pe-5">
+
+                                    <input type="text" name="status" id="status" class="form-control form-control-lg" placeholder="NEW" />
+                                </div>
+                            </div> -->
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="dealname"> Deal Name :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <input type="text" name="dealname" class="form-control form-control-lg" />
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="customername">Customer Name :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <input type="text" name="customername" class="form-control form-control-lg" />
+
+                                </div>
+                            </div>
+
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="toi">Type Of Industry :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <select class="form-select form-control form-control-lg" name="toi"
+                                        aria-label="Default select example">
+                                        <option selected>Select</option>
+                                        <option value="Agriculture">Agriculture</option>
+                                        <option value="Automotive">Automotive</option>
+                                        <option value="Banking and Finance">Banking and Finance</option>
+                                        <option value="Construction">Construction</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Energy">Energy</option>
+                                        <option value="Entertainment">Entertainment</option>
+                                        <option value="Healthcare">Healthcare</option>
+                                        <option value="Hospitality and Tourism">Hospitality and Tourism</option>
+                                        <option value="Information Technology (IT)">Information Technology (IT)</option>
+                                        <option value="Manufacturing">Manufacturing</option>
+                                        <option value="Chemical">Chemical</option>
+                                        <option value="Retail">Retail</option>
+                                        <option value="Telecommunications">Telecommunications</option>
+                                        <option value="Transportation and Logistics">Transportation and Logistics
+                                        </option>
+                                        <option value="Real Estate">Real Estate</option>
+                                        <option value="Aerospace and Defense">Aerospace and Defense</option>
+                                        <option value="Pharmaceuticals">Pharmaceuticals</option>
+                                        <option value="Environmental">Environmental</option>
+                                        <option value="E-Commerce">E-Commerce</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="opptype">Opportunity Type :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <select name="opptype" class="form-select form-control form-control-lg"
+                                    id="OppType" aria-label="Default select example">
+                                        <option selected>Select</option>
+                                        <option value="Product">Product</option>
+                                        <option value="Service">Service</option>
+                                        <option value="License">License</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="productname">Product Name :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <select class="form-select form-control form-control-lg" name="productname"
+                                        id="productSelect" aria-label="Default select example">
+                                        <option selected>Select</option>
+                                        <option value="SAP S/4HANA (Business Suite 4 SAP HANA)">SAP S/4HANA (Business
+                                            Suite 4 SAP HANA)</option>
+                                        <option value="SAP Business One">SAP Business One</option>
+                                        <option value="SAP SuccessFactors (Human Capital Management)">SAP SuccessFactors
+                                            (Human Capital Management)</option>
+                                        <option value="SAP Ariba (Procurement and Supply Chain Collaboration)">SAP Ariba
+                                            (Procurement and Supply Chain Collaboration)
+                                        </option>
+                                        <option value="SAP Concur (Travel and Expense Management)">SAP Concur (Travel
+                                            and Expense Management)</option>
+                                        <option value="SAP Customer Experience (CX)">SAP Customer Experience (CX)
+                                        </option>
+                                        <option value="SAP Hybris (E-commerce and Marketing)">SAP Hybris (E-commerce and
+                                            Marketing)</option>
+                                        <option value="SAP Fieldglass (Contingent Workforce Management)">SAP Fieldglass
+                                            (Contingent Workforce Management)</option>
+                                        <option value="SAP Business ByDesign (Cloud-based ERP for SMEs)">SAP Business
+                                            ByDesign (Cloud-based ERP for SMEs)</option>
+                                        <option value="SAP Business Warehouse (BW)">SAP Business Warehouse (BW)</option>
+                                        <option value="SAP BusinessObjects (BI and Analytics)">SAP BusinessObjects (BI
+                                            and Analytics)</option>
+                                        <option value="SAP HANA (In-Memory Database Platform)">SAP HANA (In-Memory
+                                            Database Platform)</option>
+                                        <option value="SAP Cloud Platform">SAP Cloud Platform</option>
+                                        <option value="SAP Leonardo (Digital Innovation System)">SAP Leonardo (Digital
+                                            Innovation System)</option>
+                                        <option value="SAP Integrated Business Planning (IBP)">SAP Integrated Business
+                                            Planning (IBP)</option>
+                                        <option value="SAP Master Data Governance (MDG)">SAP Master Data Governance
+                                            (MDG)</option>
+                                        <option value="SAP Solution Manager">SAP Solution Manager</option>
+                                        <option value="SAP Supply Chain Management (SCM)">SAP Supply Chain Management
+                                            (SCM)</option>
+                                        <option value="SAP Transportation Management (TM)">SAP Transportation Management
+                                            (TM)</option>
+                                    </select>
+
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 for="optionSelect" for="currenterp" class="form-label mb-0">Current ERP :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <select id="optionSelect" class="form-select" name="currenterp"
+                                        onchange="toggleInputField()">
+                                        <option>Select</option>
+                                        <option value="SAP">SAP</option>
+                                        <option value="Non-SAP">Non-SAP</option>
+                                    </select>
+                                    <div>
+                                        <input type="text" for="erpVer" name="erpVer" id="erpVer"
+                                            class="form-control mt-3 form-control-lg" placeholder="ERP Version"
+                                            style="display: none;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="erpname" class="row align-items-center py-3">
+
+
+                            </div>
+
+
+
+                            <div class="row align-items-center py-3">
+
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="nou">Number of User :</h6>
+
+                                </div>
+                                <div class="col-md-7 pe-5">
+
+                                    <input class="form-control form-control-lg" name="nou" id="formFileLg"
+                                        type="number" />
+
+
+                                </div>
+                                <div class="col-md-5 ps-5">
+
+                                    <h6 class="mb-0" for="estimatecost">estimatecost :</h6>
+
+                                </div>
+
+                                <div class="col-md-7 pe-5">
+
+                                    <input type="number" name="estimatecost" class="form-control form-control-lg" />
+                                </div>
+                            </div>
+                            </div>
+
+
+
+                            <div class="px-5 py-4" style="float: right;">
+                                <button type="submit" class="btn btn-success btn-lg">SUBMIT </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="mb-0"><b>&copy; 2023-2024 INGENX TECHNOLOGY | ALL RIGHTS RESERVED</b></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+    </script>
+    <script src="https://kit.fontawesome.com/f19d295e17.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        fetch("/dealRegisterID")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                for (var item of data) {
+                    // document.getElementById("status").innerHTML = item.status;
+                    const newID = item.id * "1" + 1;
+                    document.getElementById("id").value = newID;
+                }
+            });
+        // const crrerp = document.getElementById("erp").value;
+        // console.log(crrerp)
+        // if ((crrerp == "Non-SAP")) {
+        //     console.log("ggg")
+        //     // const erpname = document.getElementById("erpname")
+        //     // let newdiv = document.createElement("div");
+        //     // newdiv.className = "row align-items-center py-3";
+        //     // newdiv.innerhtml = `
+        //     // <div class="col-md-5 ps-5">
+
+        //     //             <h6 class="mb-0" for="nou">Number of User :</h6>
+
+        //     //             </div>
+        //     //             <div class="col-md-7 pe-5">
+
+        //     //             <input class="form-control form-control-lg" name="nou" id="formFileLg"
+        //     //                 type="number" />
+
+
+        //     //             </div>
+
+        //     // `
+        //     // erpname.appendChild(newdiv);
+        //     const para = document.createElement("p");
+        //     const node = document.createTextNode("This is new.");
+        //     para.appendChild(node);
+
+        //     const element = document.getElementById("erpname");
+        //     element.appendChild(para);
+        // } else {
+
+        // }
+        fetch('/OPPTYPES')
+        .then(function (response) {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+
+            // Assuming data is an array of objects
+            data.forEach((item) => {
+                const OppType = document.getElementById("OppType");
+                let optn = item.opptype;
+                let elem = document.createElement("option");
+                elem.textContent = optn;
+                elem.value = optn;
+                OppType.appendChild(elem);
+            });
+        })
+        .catch((error) => {
+            console.error('Error fetching data:', error);
+        });
+
+
+
+
+        
+
+        function checkAndAppend() {
+            // Get the selected option value
+            const selection = document.getElementById("selection");
+            const selectedValue = selection.value;
+
+            // Check if the selected option value matches your condition
+            if (selectedValue === "option1") {
+                // Create the new element you want to append
+                const newElement = document.createElement("input");
+                newElement.type = "text";
+                newElement.name = "newInput";
+                newElement.placeholder = "Enter something";
+
+                // Append the new element to the form
+                const form = document.getElementById("myForm");
+                form.appendChild(newElement);
+            }
+        }
+
+
+        function fetchdata() {
+            fetch('/Product').then(function (response) {
+                return response.json();
+            }).then((data) => {
+                 console.log(data);
+                dataArray = Object.values(data)
+   
+                for (var k = 0; k <= dataArray.length; k++) {
+           
+                    var datalength = dataArray[k].length;
+                    for (j = 0; j <= datalength; j++) {
+                        dataArray.forEach((item, i) => {
+
+                            const productSelect = document.getElementById("productSelect");
+                            let optn = item[j].productname;
+                            let elem = document.createElement("option");
+                            elem.textContent = optn;
+                            elem.value = optn
+                            productSelect.appendChild(elem)
+                         
+
+                        });
+                    }
+
+                }
+
+
+            })
+
+        }
+
+
+
+      
+
+
+
+
+
+
+        window.load = fetchdata();
+
+
+
+    </script>
+</body>
+
+</html>

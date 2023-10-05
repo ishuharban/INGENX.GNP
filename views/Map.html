@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([28.6139, 77.2090], 10); // Centered on Delhi, India
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define your data with coordinates and colors
+        var data = [
+            {
+                coords: [28.5451, 77.1269], // Example coordinates for Mahipalpur, Delhi
+                color: 'red',
+            },
+            // Add more data entries with coordinates and colors here
+        ];
+
+        // Loop through the data and add markers to the map
+        data.forEach(function (item) {
+            L.circleMarker(item.coords, { color: item.color }).addTo(map);
+        });
+    </script>
+</body>
+</html>

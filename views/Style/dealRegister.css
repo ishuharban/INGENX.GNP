@@ -1,0 +1,138 @@
+/* NAVBAR */
+
+.nav-item>a  {
+    color: black;
+ }
+ 
+ 
+ /* Custom CSS to close dropdown on mouse leave */
+ .dropdown:hover .dropdown-menu {
+    display: block;
+ }
+ 
+ .dropdown-item {
+    border-radius: 1px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ .navbar-brand {
+    size: xx-large;
+ }
+ 
+ #home,.dropdown,.profile {
+    padding-left: 70px;
+ }
+ 
+ 
+ /* PROFILE TAB */
+ 
+ .profile {
+    cursor: pointer;
+ }
+ 
+ .nav-link {
+    color:black;
+ }
+ 
+ .nav-link:hover {
+    color: black;
+ }
+ 
+ 
+ 
+ #pageHeader {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    border: 1px solid white;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    color: white;
+    margin-top: 110px;
+ }
+
+/* PROFILE TAB */
+
+.profile {
+    padding-left: 180px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.d-flex {
+    background: white;
+    padding: 5px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card-body{
+    border: 1px solid #cf6d6d;
+    background-color: #fffbfb;
+}
+
+
+/* DEAL REGISTER  */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Ubuntu:wght@700&display=swap');
+
+.container {
+    padding-top: 40px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.container .card {
+    /* box-shadow:  2px 2px 2px 2px black; */
+}
+
+
+h2,
+h6 {
+    /* font-weight: bolder; */
+    color: black;
+
+}
+
+.text {
+    font-weight: bolder;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 75px;
+}
+
+input:hover {
+    border: 1px solid black;
+}
+
+/* NAVBAR FIXED */
+
+nav {
+    box-shadow: 0px 4px 4px black;
+    background: white;
+}
+
+.header {
+    margin-top: 110px;
+}

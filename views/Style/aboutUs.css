@@ -1,0 +1,153 @@
+
+.container {
+    padding-top: 40px;
+}
+
+hr {
+    background: black;
+    border: 2px solid black;
+}
+
+/* CARD */
+
+.card::after {
+    display: block;
+    position: absolute;
+    /* bottom: -10px; */
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 35px;
+    background-color: black;
+    -webkit-box-shadow: 0 19px 28px 5px rgba(64,64,64,0.09);
+    box-shadow: 0 19px 28px 5px rgba(64,64,64,0.09);
+    content: '';
+    z-index: -1;
+}
+a.card {
+    text-decoration: none;
+    padding-top: 30px;
+}
+
+.card {
+    position: relative;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0 12px 20px 1px rgba(64,64,64,0.09);
+    box-shadow: 0 12px 20px 1px rgba(64,64,64,0.09);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid black;
+    border-radius: .25rem;
+    box-shadow: 4px 4px black;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 12px 20px 1px rgba(64,64,64,0.09) !important;
+    box-shadow: 0 12px 20px 1px rgba(64,64,64,0.09) !important;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+}
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+.bg-white {
+    background-color: black !important;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+}
+
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+.d-block {
+    display: block !important;
+}
+img, figure {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.card-text {
+    padding-top: 10px;
+    color: black;
+    }
+
+.block-title {
+    text-transform: uppercase;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px;
+}
+
+.text-sm {
+    font-size: 12px !important;
+}
+p, .p {
+    margin: 0 0 16px;
+}
+
+.card-title {
+    margin: 0;
+    font-family: "Montserrat",sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: black;
+}
+
+.pt-1, .py-1 {
+    padding-top: .25rem !important;
+}
+
+.head-icon{
+    margin-top:45px;
+    color:#FF4500;
+}
+
+#textImg {
+    padding-top: 50px;
+}
+
+.box-shadow {
+    width: 90px; 
+    height: 90px; 
+    margin-top: -45px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+    text-transform: uppercase;
+}
+
+
+/* CAROUSEL */
+
+.carousel-item {
+    text-align: center;
+}
+
+.carousel {
+    background-color: black;
+    padding: 20px;
+    color: white;
+}
+
+

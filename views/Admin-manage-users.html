@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Users</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="./Style/dashboard.css">
+<script src ="./js/common.js"></script>
+</head>
+<style>
+    #mark{
+        margin-top:100px;
+    }
+    #pageHeader {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    margin-top: 110px;
+ }
+</style>
+<body>
+  <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px" height="70px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="home" aria-current="page" href="./home.html"><b>HOME</b></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>DEAL</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealStatus.html"><b>STATUS</b></a></li>
+              <li>
+            </ul>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>CONFIGURATION</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./Admin-manage-users.html"><b>Status Management</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="./admin_productadd.html"><b>ADD PRODUCT</b></a></li>
+              <li>
+                <!-- <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./Admin_SalesStage.html"><b>Sales Stage</b></a></li>
+              <li> -->
+                <!-- <hr class="dropdown-divider"> -->
+              </li> 
+              <!-- <li><a class="dropdown-item" href="./dealStatus.html"><b>STATUS</b></a></li> -->
+              <li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>COMMISSION PAYOUT</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./Admintnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./AdminperformanceGraph.html"><b>PERFORMANCE GRAPH</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown profile">
+            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+              <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form method="get" action="/profile">
+                <div id="profile"></div>
+              </form>
+              <!-- <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./admin-manage-users.html"><b>Manage Users</b></a></li>
+                                <li>
+              
+              </li> -->
+              <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./Adminpersonaldetails.html"><b>PRESONAL INFO</b></a></li>
+                                <li>
+              
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./AdminSetting.html"><b>CONTACT</b></a></li>
+                                <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr />
+        <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+            id="ingenxlogo"></a>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  
+  <div class="container-fluid " id="mark" >
+    
+    <h2 id="pageHeader">Manage Users</h2>
+
+  <table class="table">
+    <thead>
+      <th>Company Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th> Status</th>
+      <th>Role & Status Update</th>
+      <th>Detail Update</th>
+      <th>Register Delete</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <!-- <label for="status">fillter:</label> -->
+ 
+    <tbody id="user-table">
+ 
+    </tbody>
+  </table>
+  </div>
+
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="mb-0"><b>&copy; 2023-2024 INGENX TECHNOLOGY | ALL RIGHTS RESERVED</b></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+  <script>
+   
+async function populateUserTable() {
+  try {
+    const response = await fetch('/update-role');
+    const users = await response.json();
+    const userTable = document.getElementById('user-table');
+    console.log(users)
+
+    userTable.innerHTML = users
+      .map(
+        (user,i) => `
+        <tr>
+          <td><a href="./Admin_SalesStage.html?partnerId=${user._id}" class="company-link" style="text-decoration:none" data-companyid="${user._id}">${user.companyname}</a></td>
+
+          <td>${user.businessemail}</td>
+          <td>${user.role}</td>
+          <td>${user.Status}</td>
+          
+          <td>
+            <form action="/update-role" method="post" class="manage-user-form">
+              <input type="hidden" name="id" value="${user._id}" />
+              <select name="role" id="role">
+                <option value="ADMIN" ${
+                  user.role === 'ADMIN' ? 'selected' : ''
+                }>Admin</option>
+                <option value="MODERATOR" ${
+                  user.role === 'MODERATOR' ? 'selected' : ''
+                }>Moderator</option>
+                <option value="CLIENT" ${
+                  user.role === 'CLIENT' ? 'selected' : ''
+                }>Client</option>
+              </select>
+              <select name="Status" id="${user._id}">
+                <option value="New" ${
+                  user.Status === 'New' ? 'selected' : ''
+                }>New</option>
+                <option value="Approved" ${
+                  user.Status === 'Approved' ? 'selected' : ''
+                }>Approved</option>
+                <option value="Rejected" ${
+                  user.Status === 'Rejected' ? 'selected' : ''
+                }>Rejected</option>
+                <option value="Pending" ${
+                  user.Status === 'Pending' ? 'selected' : ''
+                }>Pending</option>
+              <input type="submit" value="update">
+            </form>
+            
+          </td>
+          <td>
+             
+
+             
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${i}">Edit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal${i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form method="post" action="/updateUsers/${user._id}" >
+                    <div class="row">
+   
+                        <div class="form-outline mb-2">
+                            <label class="form-label" for="companyname">Company Name</label>
+                            <input type="text" id="form-reg" name="companyname" class="form-control"
+                                placeholder="Company Name"  value="${user.companyname}" readonly required/>
+
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label" for="firstname">First Name</label>
+                            <input type="text" id="form-reg" name="firstname" class="form-control colmd-12"
+                                placeholder="First Name"  value="${user.firstname}" required/>
+
+                        </div>
+                        <div class="col-md-6 mb-2" id="lastname">
+                            <label class="form-label" for="lastname">Last Name</label>
+                            <input type="text" id="form-reg" name="lastname" class="form-control col-md-12"
+                                placeholder="Last Name" value="${user.lastname}" required/>
+
+                        </div>
+
+                        <div class="form-outline mb-2">
+                            <label class="form-label" for="address">Address</label>
+                            <input type="text" id="form-reg" name="address" class="form-control"
+                                placeholder="Address"  value="${user.address}" required/>
+                               
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="form-outline">
+                                <label class="form-label" for="Gstnno">GSTN Number</label>
+                                <input type="text" id="form-reg" name="Gstnno" value="${user.Gstnno}" class="form-control"
+                                    placeholder="GSTN" readonly />
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="form-outline">
+                                <label class="form-label" for="phoneno">Phone Number</label>
+                                <input type="tel" pattern="[0-9]{10}" name="phoneno" value="${user.phoneno}" id="form-reg" class="form-control"
+                                    placeholder="Phone Number" required/>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-outline mb-2">
+                        <label class="form-label" for="businessemail">Business Email</label>
+                        <input type="email" id="form-reg" class="form-control" name="businessemail"
+                            placeholder="Email ID" value="${user.businessemail}" readonly required/>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="website">Website</label>
+                        <input type="text" id="form-reg" class="form-control" name="website"
+                            placeholder="Website" value="${user.website}" />
+                    </div>
+ <button type="submit" class="btn btn-primary">Update </button>
+                   
+                </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+</td>
+
+
+  
+              
+
+          <td>
+  <form class="manage-user-form">
+    <input type="hidden" name="id" value="${user._id}" />
+    <button type="button" class="btn btn-danger" onclick="confirmDelete('${user._id}')">Delete</button>
+  </form>
+</td>
+
+
+        </tr>
+
+      
+ 
+      `
+      )
+      .join('');
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function confirmDelete(userId) {
+    if (confirm("Are you sure you want to delete this user?")) {
+      // If the user confirms, submit the form for deletion
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "/delete-user";
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "id";
+      input.value = userId;
+      form.appendChild(input);
+      document.body.appendChild(form);
+      form.submit();
+    } else {
+    }
+  }
+  function abc(){
+    console.log("click");
+  }
+
+
+  // function openEditForm(id, firstname, lastname) {
+  //   const editModal = document.getElementById('editModal');
+  //   const editUserId = document.getElementById('editUserId');
+  //   const editFirstName = document.getElementById('editFirstName');
+  //   const editLastName = document.getElementById('editLastName');
+
+  //   editUserId.value = id;
+  //   editFirstName.value = firstname;
+  //   editLastName.value = lastname;
+
+  //   editModal.style.display = 'block';
+  // }
+
+  // function closeEditForm() {
+  //   const editModal = document.getElementById('editModal');
+  //   editModal.style.display = 'none';
+  // }
+
+  // async function updateUser(userId) {
+  //   // const form = document.querySelector('form');
+  //   console.log("click");  
+  //   console.log(userId);
+  // //   const formData = {};
+  // //   for (const field of form.elements) {
+  // //   if (field.name) {
+  // //     formData[field.name] = field.value;
+  // //      }
+  // // }
+
+
+  //   try {
+  //     const response = await fetch(`/updateUsers/${userId}`, {
+  //       method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json', 
+  //     },
+  //     body: JSON.stringify({
+  //       firstname: document.getElementsByName('firstname')[0].value,
+  //       lastname: document.getElementsByName('lastname')[0].value,
+  //       address: document.getElementsByName('address')[0].value,
+  //       phoneno: document.getElementsByName('phoneno')[0].value,
+  //       Gstnno: document.getElementsByName('Gstnno')[0].value,
+  //       website: document.getElementsByName('website')[0].value,
+  //     }),
+       
+  //     });
+
+  //     if (response.ok) {
+      
+  //       const responseData = await response.json();
+  //       ; 
+  //       populateUserTable(); 
+  //     } else {
+      
+  //       alert('Failed to update user');
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert('An error occurred');
+  //   }
+  // }
+
+
+
+
+
+window.onload = populateUserTable;
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

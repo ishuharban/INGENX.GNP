@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Style/partnerSummary.css">
+    <script src="./js/partnerApproval.js"></script>
+</head>
+
+<body>
+  
+  
+  <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px" height="70px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="home" aria-current="page" href="./home.html"><b>HOME</b></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>DEAL</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealStatus.html"><b>STATUS</b></a></li>
+              <li>
+            </ul>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>CONFIGURATION</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./Admin-manage-users.html"><b>Status Management</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="./admin_productadd.html"><b>ADD PRODUCT</b></a></li>
+              <li>
+                <!-- <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./Admin_SalesStage.html"><b>Sales Stage</b></a></li>
+              <li> -->
+                <!-- <hr class="dropdown-divider"> -->
+              </li> 
+              <!-- <li><a class="dropdown-item" href="./dealStatus.html"><b>STATUS</b></a></li> -->
+              <li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>COMMISSION PAYOUT</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./Admintnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./AdminperformanceGraph.html"><b>PERFORMANCE GRAPH</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown profile">
+            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+              <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form method="get" action="/profile">
+                <div id="profile"></div>
+              </form>
+              <!-- <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./admin-manage-users.html"><b>Manage Users</b></a></li>
+                                <li>
+              
+              </li> -->
+              <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./Adminpersonaldetails.html"><b>PRESONAL INFO</b></a></li>
+                                <li>
+              
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./AdminSetting.html"><b>CONTACT</b></a></li>
+                                <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr />
+        <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+            id="ingenxlogo"></a>
+      </div>
+    </div>
+  </nav>
+
+
+
+    <!-- SUMMARY -->
+
+    <form method="get" action="/DealS">
+        <h2 id="pageHeader">PARTNER SUMMARY</h2>
+        <div class="row p-4" id="cardDetails">
+            <div>
+            </div>
+    </form>
+
+            <!-- FOOTER -->
+
+        <footer>
+                    <p id="footer" class="mb-0"><b>&copy; 2023-2024 INGENX TECHNOLOGY | ALL RIGHTS RESERVED</b></p>
+        </footer>
+
+    <script src="https://kit.fontawesome.com/f19d295e17.js" crossorigin="anonymous"></script>
+    <script>
+        // Function to fetch data from the API
+        function fetchData() {
+            fetch('/DealS')
+                .then(response => response.json())
+                .then(data => {
+                    // Iterate through the data and create card elements
+                    const cardrow = document.getElementById('cardDetails');
+                    data.forEach((item, i) => {
+
+                        const card = document.createElement('div');
+                        card.className = 'col-md-9';
+
+                        // Set card content using item properties
+                        card.innerHTML = `
+                                                                <table class="table table-hover p-2">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Company Details</th>
+                                                                            <th>Company Value</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td name="companyname">Company Name</td>
+                                                                            <td id="companyname">${item.companyname}</td>
+                                                                        </tr>
+                                                                        <td name="firstname">First Name</td>
+                                                                        <td id="firstname">${item.firstname}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="lastname">Last Name</td>
+                                                                            <td id="lastname">${item.lastname}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="gstnno">GSTN Number</td>
+                                                                            <td id="gstnno">${item.Gstnno}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="address">Address</td>
+                                                                            <td id="address">${item.address}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="phoneno">Phone</td>
+                                                                            <td id="phoneno">${item.phoneno}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="businessemail">Email</td>
+                                                                            <td id="email">${item.businessemail}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="website">Website</td>
+                                                                            <td id="website">${item.website}</td>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="status">Status</td>
+                                                                            <td id="status1">${item.status}</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            <hr/>
+                `;
+
+                        cardrow.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                });
+        }
+
+        // Call the fetchData function when the page loads
+        window.onload = fetchData();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

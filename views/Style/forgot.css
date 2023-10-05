@@ -1,0 +1,29 @@
+/* FORGOT PASSWORD */
+
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    margin: 6em auto;
+    text-align: center;
+    border-radius: 5px
+}
+
+#box {
+    border-radius: 10px;
+    box-shadow: 2px 2px black;
+}
+
+ 
+ 
+
+
+/* FOOTER */
+
+footer {
+    position: relative;
+    padding-top: 60px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+}

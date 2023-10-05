@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="./Style/forgot.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f19d295e17.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="100px" height="70px">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+            </button>
+            <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+                    id="ingenxlogo"></a>
+        </div>
+        </div>
+    </nav>
+
+
+    <!-- FORGOT -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="card my-auto shadow" id="box">
+                <div class="card-body p-5">
+
+                    <div class="text-center">
+                        <h2><i class="fa-solid fa-key"></i> FORGOT PASSWORD</h2>
+                    </div>
+                    <p>Please enter your registered email where<br> we will send you the
+                        reset password link</p>
+                    <form action="/forgot" method="post">
+                        <div class="form-group mt-7">
+                            <input type="email" id="email" placeholder="Email Address" class="form-control" name="businessemail" />
+                        </div>
+                        <input type="submit" class="btn btn-primary w-100 mt-4" value="Reset Password Link" onclick="showAlert()" name="">
+                    </form>
+                </div>
+                <div class="card-footer text-right">
+                    <small>Oh, I Remember - <a href="/login">BACK TO LOGIN</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container2 py-12">
+            <div class="row">
+                <div class="col-md-12 text-center text-md-start">
+                    <p class="mb-0">Copyrights &copy; ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function showAlert() {
+          alert("Password reset link sent your mail successfully!");
+        }
+      </script>
+</body>
+
+</html>

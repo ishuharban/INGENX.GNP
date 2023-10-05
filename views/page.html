@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph Page</title>
+    <!-- Include necessary CSS and JavaScript libraries for your chosen graphing library (e.g., Chart.js, D3.js) -->
+</head>
+<body>
+    <!-- Create placeholders for your graphs -->
+    <div>
+        <canvas id="estimateCostChart"></canvas>
+    </div>
+    <div>
+        <canvas id="statusChart"></canvas>
+    </div>
+    <!-- Include JavaScript code to fetch data from your Node.js server and render the graphs -->
+    <script >
+        document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        // Fetch data from your Node.js server
+        const response = await fetch('/grafs');
+        const data = await response.json();
+
+        // Create Chart.js charts with the received data
+        const estimateCostChart = new Chart(document.getElementById('estimateCostChart'), {
+            type: 'pie', // or any other chart type you prefer
+            data: {
+                labels: ['Deal 1', 'Deal 2', /* ... */],
+                datasets: [{
+                    label: 'Estimate Cost',
+                    data: data.estimateCostData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // customize as needed
+                    borderColor: 'rgba(75, 192, 192, 1)', // customize as needed
+                    borderWidth: 1 // customize as needed
+                }]
+            },
+            options: {
+                // Customize chart options as needed
+            }
+        });
+
+        // Create another Chart.js chart for the "status" graph similarly
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+    </script>
+</body>
+</html>

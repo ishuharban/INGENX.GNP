@@ -1,0 +1,14 @@
+Operators in TypeScript
+In TypeScript, an operator can be classified into the following ways.
+
+Arithmetic operators (+,-,*,/)
+Comparison (Relational) operators (==,>,<)
+Logical operators (&&, ||, !)
+Bitwise operators
+Assignment operators (a+=b)
+Ternary/conditional operator (?)
+Concatenation operator ("docs"+value)
+Type Operator
+
+
+....................................

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Approval</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Style/dealApproval.css">
+    <script src="./js/dealApproval.js"></script>
+    <script src="./js/common.js"></script>
+    <style>
+        .hide{
+display:none;
+}
+    </style>
+</head>
+
+<body>
+
+
+    
+  <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px" height="70px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="home" aria-current="page" href="./dashboard.html"><b>HOME</b></a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>DEAL</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealDetails.html"><b>STATUS</b></a></li>
+              <li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>COMMISSION PAYOUT</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./tnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <!-- <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE UPLOAD & GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li> -->
+              <li><a class="dropdown-item" href="./performanceGraph.html"><b>PERFORMANCE GRAPH</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown profile">
+            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+              <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form method="get" action="/profile">
+                <div id="profile"></div>
+              </form>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./personaldetails.html"><b>PRESONAL INFO</b></a></li>
+              <li>
+
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./settings.html"><b>SETTINGS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr />
+        <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+            id="ingenxlogo"></a>
+      </div>
+    </div>
+  </nav>
+
+
+    <!--PARTNER APPROVAL-->
+
+
+
+    <form action="/DealS">
+        <h2 id="pageHeader">DEAL APPROVAL</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="container">
+                            <div class="dropdown" id="dropdownMenuButton">
+                             
+                                <form action="/" method="get"
+                                    class="form-inline d-flex justify-content-center md-form form-sm">
+                                
+                                        <!-- <label for="status">fillter:</label> -->
+                                        <select class="form-control form-control-sm select-box" id="statusFilter">
+                                            <option value="All">All</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Approved">Approved</option>
+                                            <option value="Rejected">Rejected</option>
+                                        </select>
+
+                                       
+
+                                </form>
+                                <!-- <br /> -->
+                                <!-- <hr />
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="float: left;">
+                                    <button class="dropdown-item" href="#">Option 1</button>
+                                    <button class="dropdown-item" href="#">Option 2</button>
+                                    <button class="dropdown-item" href="#">Option 3</button>
+                                </div> -->
+                                <form id="searchForm">
+                                    <input type="text" placeholder="Search" id="searchInput" name="search">
+                                    <!-- <input type="submit" value="search"> -->
+                                    <input type="button" value="Search" onclick="searchDeals()">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" id="card-container">
+                    <div class="row" id="cardDetails">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="mb-0"><b>&copy; 2023-2024 INGENX TECHNOLOGY | ALL RIGHTS RESERVED</b></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function searchDeals() {
+          console.log("click");
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const cardDetails = document.getElementById('cardDetails');
+    const cards = cardDetails.getElementsByClassName('card');
+
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const cardTitle = card.querySelector('.card-title').textContent.toLowerCase();
+     
+        const status = card.querySelector('#status').textContent.toLowerCase();
+
+        // Check if the searchInput matches any of the card details
+        if (cardTitle.includes(searchInput) ||  status.includes(searchInput)) {
+            card.style.display = 'block'; // Show the card
+        } else {
+            card.style.display = 'none'; // Hide the card
+        }
+    }
+}
+
+    </script>
+    <script src="https://kit.fontawesome.com/f19d295e17.js" crossorigin="anonymous"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

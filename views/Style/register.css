@@ -1,0 +1,29 @@
+.footer {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 100px;
+}
+
+
+p {
+    text-align: center;
+}
+
+
+input:hover {
+    border: 1px solid black;
+}
+
+.col-lg-5 {
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 2px 2px black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+#reg_logo {
+    margin-top: 60px;
+}

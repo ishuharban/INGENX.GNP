@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Approval</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Style/partnerApproval.css">
+    <script src="./js/partnerApproval.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+
+<body>
+
+ <!-- NAVBAR -->
+
+ <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <img src="./img/logo-print-hd-transparent.png" class="navbar-brand" alt="INGENX" width="120px" height="70px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-sharp fa-solid fa-bars fa-2xl"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="home" aria-current="page" href="./home.html"><b>HOME</b></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>PARTNER</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./partnerApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerStatus.html"><b>STATUS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./partnerSummary.html"><b>SUMMARY</b></a></li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>DEAL</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./dealRegister.html"><b>REGISTER</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealApproval.html"><b>APPROVAL</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./dealStatus.html"><b>STATUS</b></a></li>
+              <li>
+            </ul>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>CONFIGURATION</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./Admin-manage-users.html"><b>Status Management</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="./admin_productadd.html"><b>ADD PRODUCT</b></a></li>
+              <li>
+                <!-- <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./Admin_SalesStage.html"><b>Sales Stage</b></a></li>
+              <li> -->
+                <!-- <hr class="dropdown-divider"> -->
+              </li> 
+              <!-- <li><a class="dropdown-item" href="./dealStatus.html"><b>STATUS</b></a></li> -->
+              <li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" disabled>
+              <b>COMMISSION PAYOUT</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="./Admintnc.html"><b>TERMS & AGREEMENTS</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./invoice.html"><b>INVOICE GENERATE</b></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./AdminperformanceGraph.html"><b>PERFORMANCE GRAPH</b></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown profile">
+            <a class="nav-link dropdown" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+              <b><i class="fa-solid fa-user fa-xl"></i> PROFILE</b>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <form method="get" action="/profile">
+                <div id="profile"></div>
+              </form>
+              <!-- <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./admin-manage-users.html"><b>Manage Users</b></a></li>
+                                <li>
+              
+              </li> -->
+              <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./Adminpersonaldetails.html"><b>PRESONAL INFO</b></a></li>
+                                <li>
+              
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="./AdminSetting.html"><b>CONTACT</b></a></li>
+                                <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" onclick="logout()"><b>LOGOUT</b></a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr />
+        <a href="http://www.ingenxtec.com/"><img src="./img/ingenxlogo.png" alt="INGENX" width="120px" height="40px"
+            id="ingenxlogo"></a>
+      </div>
+    </div>
+  </nav>
+
+
+    <!--PARTNER APPROVAL-->
+
+
+
+    <form style="position: relative;">
+        <h2 id="pageHeader">PARTNER APPROVAL</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <div class="container">
+                            <div class="dropdown" id="dropdownMenuButton">
+                                <button class="btn btn-light" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <b><strong>FILTER</strong></b>
+                                </button>
+                                <br />
+                                <hr />
+                                <form id="searchForm">
+                                    <input type="text" placeholder="Search" id="searchInput" name="search">
+                                    <!-- <input type="submit" value="search"> -->
+                                    <input type="button" value="Search" onclick="searchDeals()">
+                                </form>
+                                <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="float: left;">
+                                    <button class="dropdown-item" href="#">Option 1</button>
+                                    <button class="dropdown-item" href="#">Option 2</button>
+                                    <button class="dropdown-item" href="#">Option 3</button>
+                                </div> -->
+                            </div>
+                        </div>
+                        <a href="/new-user">Add New User</a>
+                    </div>
+                </div>
+                <div class="container-fluid" id="card-container">
+                    <div class="row" id="cardDetails">
+                        <div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </form>
+
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="mb-0"><b>&copy; 2023-2024 INGENX TECHNOLOGY | ALL RIGHTS RESERVED</b></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/f19d295e17.js" crossorigin="anonymous"></script>
+    
+    <script>
+
+
+
+// Add similar event listeners for other statuses
+
+
+    function searchDeals() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const cardDetails = document.getElementById('cardDetails');
+    const cards = cardDetails.getElementsByClassName('card');
+
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const cardTitle = card.querySelector('.card-title').textContent.toLowerCase();
+        const partnerId = card.querySelector('#id').textContent.toLowerCase();
+        const status = card.querySelector('#status').textContent.toLowerCase();
+
+        // Check if the searchInput matches any of the card details
+        if (cardTitle.includes(searchInput) || partnerId.includes(searchInput) || status.includes(searchInput)) {
+            card.style.display = 'block'; // Show the card
+        } else {
+            card.style.display = 'none'; // Hide the card
+        }
+    }
+}
+
+
+
+
+
+        function showAllDeals(partnerId) {
+            // Redirect to the partnerDeals.html page with the partnerId as a query parameter
+            window.location.href = `partnerDeals.html?partnerId=${partnerId}`;
+        }
+        // Function to fetch data from the API
+        function fetchData() {
+            fetch('/DealS')
+                .then(response => response.json())
+
+                .then(data => {
+                    // Iterate through the data and create card elements
+                    const cardContainer = document.getElementById('card-container');
+                    const cardrow = document.getElementById('cardDetails');
+                    data.forEach((item, i) => {
+
+                        const card = document.createElement('div');
+                        card.className = 'card col-md-6';
+                        
+
+                        // Set card content using item properties
+                        card.innerHTML = `
+          
+                            <div class="card-body m-2">
+                                <h2 class="card-title" style="text-transform: uppercase;">${item.firstname} ${item.lastname}</h2>
+                                <hr />
+
+                                <div class="row col-lg-12">
+                                    <div class="col-lg-6">
+                                        <p class="card-text" style="padding-top: 17px;" name="deal"><b>Partner ID</b></p>
+                                        <p class="card-text" name="status" style="padding-bottom: 20px;"><b>Status</b>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <b>
+                                            <p class="card-text" name="partnerID">
+                                                <p id="id">${item._id}</p>
+                                            </p>
+                                        </b>
+                                        <b>
+                                            <p class="card-text" id="status">${item.Status}</p>
+                                        </b>
+                                    </div>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4 p-2">
+                                            <button type="button" class="card-text btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop${i}">
+                                                Details
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-4 p-2">
+                                            <button type="button" class="card-text btn btn-primary " onclick="showAllDeals('${item._id}')">
+                                             Deals
+                                        </button>
+                                        </div>
+                                        <div class="col-lg-4 p-2">
+                                            <div class="col-lg-6">
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"
+                                                    data-bs-whatever="@getbootstrap">Contact</button>
+
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">New
+                                                                    message</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="recipient-name"
+                                                                            class="col-form-label">Recipient:</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="recipient-name">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Message:</label>
+                                                                        <textarea class="form-control"
+                                                                            id="message-text"></textarea>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Send
+                                                                    message</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop${i}" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">Partner Details</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container">
+                                                    <div class="row table-data" id="modal">
+                                                        <div class="col-lg-12">
+                                                            <div class="col-lg-12">
+                                                                <table class="table table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Company Details</th>
+                                                                            <th>Company Value</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td name="companyname">Company Name</td>
+                                                                            <td id="companyname">${item.companyname}</td>
+                                                                        </tr>
+                                                                        <td name="firstname">First Name</td>
+                                                                        <td id="firstname">${item.firstname}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="lastname">Last Name</td>
+                                                                            <td id="lastname">${item.lastname}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="gstnno">GSTN Number</td>
+                                                                            <td id="gstnno">${item.Gstnno}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="address">Address</td>
+                                                                            <td id="address">${item.address}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="phoneno">Phone</td>
+                                                                            <td id="phoneno">${item.phoneno}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="businessemail">Email</td>
+                                                                            <td id="email">${item.businessemail}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="website">Website</td>
+                                                                            <td id="website">${item.website}</td>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="status">Status</td>
+                                                                            <td id="status1">${item.Status}</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <hr />
+                                                            <div class="row col-lg-12 md-2" id="status">
+                                                                <!-- STATUS -->
+                                                                <div class="col-lg-6">
+                                                                    <button class="btn btn-primary p-2"><b>DETAIL
+                                                                            SUMMARY</b></button>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <hr />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                `;
+
+
+
+                        cardrow.appendChild(card);
+
+
+                    });
+
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                });
+
+
+        }
+
+        // Call the fetchData function when the page loads
+        window.onload = fetchData();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

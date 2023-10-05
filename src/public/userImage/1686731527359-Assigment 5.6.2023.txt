@@ -1,0 +1,5 @@
+1. Prove that number is palindrome or not
+2. Prove tht number is armstrong or not
+3. prove that the number is prime or not
+4. Switch case( enter 1 to add two number, enter 2 to subtract number, enter 3 to multiply number, enter 4 to  divide number)
+5.Find out the grade of students mark using nested if

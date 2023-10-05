@@ -1,0 +1,130 @@
+/* NAVBAR */
+nav{
+    box-shadow: 0px 3px 3px black;
+    background-color:white ;
+ }
+.nav-item>a  {
+    color: black;
+ }
+ 
+ 
+ /* Custom CSS to close dropdown on mouse leave */
+ .dropdown:hover .dropdown-menu {
+    display: block;
+ }
+ 
+ .dropdown-item {
+    border-radius: 1px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ .navbar-brand {
+    size: xx-large;
+ }
+ 
+ #home,.dropdown,.profile {
+    padding-left: 70px;
+ }
+ 
+ 
+ /* PROFILE TAB */
+ 
+ .profile {
+    cursor: pointer;
+ }
+ 
+ .nav-link {
+    color:black;
+ }
+ 
+ .nav-link:hover {
+    color: black;
+ }
+ 
+ 
+ 
+ #pageHeader {
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    background: black;
+    border: 1px solid white;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+ }
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+    text-transform: uppercase;
+}
+
+/* PARTNER APPROVAL */
+
+#pageHeader {
+    color:white;
+}
+
+.card {
+    border: 1px solid black;
+    width: fit-content;
+    box-shadow: 10px 10px black;
+    margin: 15px ;
+}
+
+.card-text {
+    display: block;
+    justify-content: left;
+}
+/* 
+.rounded-circle {
+    padding: 20px;
+} */
+
+hr, .text-muted {
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.row, .card-body {
+    justify-content: center;
+}
+
+
+.card-text>a:hover {
+    color: black;
+    size: 20rem;
+}
+
+
+#dropdownMenuButton {
+    float: right;
+    padding-top: 10px;
+}
+
+.table {
+    border: 1px solid black;
+    color: black;
+}
+
+#status {
+    color: black; 
+}
+
+
+.col-lg-8 {
+    padding: 2px;
+}
+
+
+

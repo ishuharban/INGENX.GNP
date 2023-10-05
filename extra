@@ -1,0 +1,215 @@
+ <script>
+        // Function to fetch data from the API
+        function fetchData() {
+          fetch('/dealsDetails')
+            .then(response => response.json())
+            .then(data => {
+              // Iterate through the data and create card elements
+              const cardContainer = document.getElementById('card-container');
+             const cardrow = document.getElementById('cardDetails');
+              data.forEach((item, i) => {
+               
+                const card = document.createElement('div');
+                card.className = 'card col-md-3';
+    
+                // Set card content using item properties
+                card.innerHTML = `
+          
+                            <div class="card-body m-2">
+                                <h2 class="card-title" style="text-transform: uppercase;">${item.dealname}</h2>
+                                <hr />
+
+                                <div class="row col-lg-12">
+                                    <div class="col-lg-6">
+                                        <p class="card-text" style="padding-top: 17px;" name="deal"><b>Deal ID</b></p>
+                                        <p class="card-text" name="status" style="padding-bottom: 20px;"><b>Status</b>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <b>
+                                            <p class="card-text" name="deal">
+                                                <p id="id">${item.id}</p>
+                                            </p>
+                                        </b>
+                                        <b>
+                                            <p class="card-text" id="status">${item.status}</p>
+                                        </b>
+                                    </div>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 py-2">
+                                            <button type="button" class="card-text btn btn-primary"
+                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop${i}">
+                                                Details
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-6 py-2">
+                                            <div class="col-lg-12">
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"
+                                                    data-bs-whatever="@getbootstrap">Contact</button>
+
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">New
+                                                                    message</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="recipient-name"
+                                                                            class="col-form-label">Recipient:</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="recipient-name">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="message-text"
+                                                                            class="col-form-label">Message:</label>
+                                                                        <textarea class="form-control"
+                                                                            id="message-text"></textarea>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Send
+                                                                    message</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop${i}" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">Deal Details</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container">
+                                                    <div class="row table-data" id="modal">
+                                                        <div class="col-lg-12">
+                                                            <div class="col-lg-12">
+                                                                <table class="table table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Deal Details</th>
+                                                                            <th>Value</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td name="dealname">Deal Name</td>
+                                                                            <td id="dealname">${item.dealname}</td>
+                                                                        </tr>
+                                                                        <td name="customername">Customer Name</td>
+                                                                        <td id="customername">${item.customername}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="toi">Type of Industry</td>
+                                                                            <td id="gstnno">${item.toi}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="opptype">Opportunity Type</td>
+                                                                            <td id="opptype">${item.opptype}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="productname">Product Name</td>
+                                                                            <td id="productname">${item.productname}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="currenterp">Current ERP</td>
+                                                                            <td id="email">${item.currenterp}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="nou">Number of User</td>
+                                                                            <td id="nou">${item.nou}</td>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td name="status">Status</td>
+                                                                            <td id="status">${item.status}</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <hr />
+                                                            <div class="row col-lg-12 md-2" id="status">
+                                                                <!-- STATUS -->
+                                                                <div class="col-lg-6">
+                                                                    <a class="btn btn-primary p-2" href="./dlc.html"><b>DETAIL
+                                                                            SUMMARY</b></a>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <div class="form-check form-switch">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            id="flexSwitchCheckDefault">
+                                                                        <label class="form-check-label"
+                                                                            for="flexSwitchCheckDefault"><b>APPROVED</b></label>
+                                                                    </div>
+                                                                    <div class="form-check form-switch">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            id="flexSwitchCheckChecked" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="flexSwitchCheckChecked"><b>REJECTED</b></label>
+                                                                    </div>
+                                                                    <div class="form-check form-switch">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            id="flexSwitchCheckDisabled">
+                                                                        <label class="form-check-label"
+                                                                            for="flexSwitchCheckDisabled"><b>IN
+                                                                                PROCESS</b></label>
+                                                                    </div>
+                                                                    <div class="form-check form-switch">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            id="flexSwitchCheckCheckedDisabled" checked
+                                                                            disabled>
+                                                                        <label class="form-check-label"
+                                                                            for="flexSwitchCheckCheckedDisabled"><b>OTHERS</b></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                `;
+    
+                cardrow.appendChild(card);
+              });
+            })
+            .catch(error => {
+              console.log('Error:', error);
+            });
+        }
+    
+        // Call the fetchData function when the page loads
+        window.onload = fetchData();
+      </script>
